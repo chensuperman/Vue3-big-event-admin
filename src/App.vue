@@ -5,7 +5,7 @@
 //2.获取路由参数 route useRouter
 //  const router =useRoute()
 import { useRoute, useRouter } from 'vue-router'
-import { useUserStore } from './stores/user'
+import { useUserStore } from './stores'
 const router = useRouter()
 const route = useRoute()
 
