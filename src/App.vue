@@ -15,11 +15,14 @@ const goList = () => {
 }
 
 const useStore = useUserStore()
-console.log(useStore)
-console.log(useStore.setToken)
 </script>
 
 <template>
+  <router-view></router-view>
+  <hr />
+  <hr />
+  <hr />
+
   <div>我是App</div>
   <el-button @click="$router.push('/home')">跳首页</el-button>
   <el-button @click="goList">跳列表页</el-button>
