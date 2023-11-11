@@ -18,8 +18,10 @@ instance.interceptors.request.use(
     if (useStore.token) {
       config.headers.Authorization = useStore.token
     }
+    ElLoading.service({ text: 'loading' })
     return config
   },
+
   (err) => Promise.reject(err)
 )
 
@@ -28,6 +30,7 @@ instance.interceptors.response.use(
   (res) => {
     // TODO 4. 摘取核心响应数据
     if (res.data.code === 0) {
+      ElLoading.service().close()
       return res
     }
 
