@@ -47,6 +47,7 @@ instance.interceptors.response.use(
     }
 
     //错误的默认情况=>只给提示
+    ElLoading.service().close()
     ElMessage.error(err.response.data.message)
     return Promise.reject(err)
   }
